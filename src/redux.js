@@ -5,21 +5,21 @@ import {
 } from 'redux';
 
 // actions.js
-export const activateGeod = geod => ({  
-  type: 'ACTIVATE_GEOD',
+export const openMessage = geod => ({  
+  type: 'SHOW_MESSAGE',
   geod,
 });
 
 export const closeGeod = () => ({  
-  type: 'CLOSE_GEOD',
+  type: 'HIDE_MESSAGE',
 });
 
 // reducers.js
 export const geod = (state = {}, action) => {  
   switch (action.type) {
-    case 'ACTIVATE_GEOD':
+    case 'SHOW_MESSAGE':
       return action.geod;
-    case 'CLOSE_GEOD':
+    case 'HIDE_MESSAGE':
       return {};
     default:
       return state;

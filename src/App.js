@@ -5,7 +5,7 @@ import React, {
 import { connect } from 'react-redux';
 
 import {  
-  activateGeod,
+  openMessage,
   closeGeod,
 } from './redux';
 
@@ -22,7 +22,7 @@ export class App extends Component {
           <button onClick={this.props.closeGeod}>
             Exit Geod
           </button> :
-          <button onClick={() => this.props.activateGeod({ title: 'I am a geo dude!' })}>
+          <button onClick={() => this.props.openMessage({ title: 'This is an Open Message' })}>
             Click Me!
           </button>
        }
@@ -39,7 +39,7 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = {  
-  activateGeod,
+  openMessage,
   closeGeod,
 };
 
