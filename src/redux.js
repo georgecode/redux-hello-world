@@ -4,13 +4,18 @@ import {
   createStore,
 } from 'redux';
 
+
+// actions >> reducers >> store
+
+
+
 // actions.js
-export const openMessage = geod => ({  
+export const openMessage = message => ({  
   type: 'SHOW_MESSAGE',
-  geod,
+  message,
 });
 
-export const closeGeod = () => ({  
+export const closeMessage = () => ({  
   type: 'HIDE_MESSAGE',
 });
 
@@ -18,7 +23,7 @@ export const closeGeod = () => ({
 export const geod = (state = {}, action) => {  
   switch (action.type) {
     case 'SHOW_MESSAGE':
-      return action.geod;
+      return action.message;
     case 'HIDE_MESSAGE':
       return {};
     default:

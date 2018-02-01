@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 
 import {  
   openMessage,
-  closeGeod,
+  closeMessage,
 } from './redux';
 
 // App.js
@@ -16,14 +16,14 @@ export class App extends Component {
     return (
       <div>
 
-        <h1>{this.props.geod.title || 'Hello World!'}</h1>
+        <h1>{this.props.geod.title || 'This is where your message will be'}</h1>
 
         {this.props.geod.title ?
-          <button onClick={this.props.closeGeod}>
-            Exit Geod
+          <button onClick={this.props.closeMessage}>
+            Click to exit message
           </button> :
           <button onClick={() => this.props.openMessage({ title: 'This is an Open Message' })}>
-            Click Me!
+            Click to see message!
           </button>
        }
 
@@ -40,7 +40,7 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = {  
   openMessage,
-  closeGeod,
+  closeMessage,
 };
 
 const AppContainer = connect(  
