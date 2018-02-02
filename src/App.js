@@ -1,3 +1,12 @@
+// https://github.com/tylerbuchea/my-simple-app
+// http://blog.tylerbuchea.com/super-simple-react-redux-application-example/
+
+// basic Explanation of redux parts
+// https://medium.com/@itsdavidthai/redux-an-explanation-for-beginners-957f268e7382
+
+
+
+
 import React, {  
   Component,
 } from 'react';
@@ -16,9 +25,9 @@ export class App extends Component {
     return (
       <div>
 
-        <h1>{this.props.geod.title || 'This is where your message will be'}</h1>
+        <h1>{this.props.currentMessage.title || 'This is where your message will be'}</h1>
 
-        {this.props.geod.title ?
+        {this.props.currentMessage.title ?
           <button onClick={this.props.closeMessage}>
             Click to exit message
           </button> :
@@ -35,7 +44,7 @@ export class App extends Component {
 
 // AppContainer.js
 const mapStateToProps = (state, ownProps) => ({  
-  geod: state.geod,
+  currentMessage: state.currentMessage,
 });
 
 const mapDispatchToProps = {  
@@ -49,3 +58,9 @@ const AppContainer = connect(
 )(App);
 
 export default AppContainer;  
+
+
+
+
+
+

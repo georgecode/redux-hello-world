@@ -1,3 +1,10 @@
+// https://github.com/tylerbuchea/my-simple-app
+// http://blog.tylerbuchea.com/super-simple-react-redux-application-example/
+
+// basic Explanation of redux parts
+// https://medium.com/@itsdavidthai/redux-an-explanation-for-beginners-957f268e7382
+
+
 import {  
   applyMiddleware,
   combineReducers,
@@ -20,7 +27,7 @@ export const closeMessage = () => ({
 });
 
 // reducers.js
-export const geod = (state = {}, action) => {  
+export const currentMessage = (state = {}, action) => {  
   switch (action.type) {
     case 'SHOW_MESSAGE':
       return action.message;
@@ -32,7 +39,7 @@ export const geod = (state = {}, action) => {
 };
 
 export const reducers = combineReducers({  
-  geod,
+  currentMessage,
 });
 
 // store.js
